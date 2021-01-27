@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { SalaryForm } from './components/SalaryForm'
+import { SalaryForm, initialValues } from './components/SalaryForm'
 
 function App() {
   return (
     <div className='App container py-3'>
-      <SalaryForm />
+      <SalaryForm initialValues={initialValues} />
     </div>
   )
 }
