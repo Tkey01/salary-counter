@@ -5,6 +5,7 @@ import { Input } from '../Input'
 import { Tooltip } from '../Tooltip'
 
 import styles from './SalaryForm.module.scss'
+import { SalaryInfo } from '../Input/components/SalaryInfo/SalaryInfo'
 
 interface IProps {
   [s: string]: any
@@ -13,6 +14,8 @@ interface IProps {
 const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
   handleSubmit,
   salaryType,
+  mounthlyCount,
+  withoutNDFL,
   ...rest
 }) => {
   return (
@@ -49,11 +52,11 @@ const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
       </div>
       <div className={styles.inputContainer}>
         <Field
-          name='withNDFL'
+          name='withoutNDFL'
           component={Input}
           props={{
             type: 'switcher',
-            id: 'withNDFL',
+            id: 'withoutNDFL',
             label1: 'Указать с НДФЛ',
             label2: 'Без НДФЛ',
           }}
@@ -62,8 +65,8 @@ const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
           <Field
             name='mounthlyCount'
             component={Input}
+            type='number'
             props={{
-              type: 'number',
               id: 'mounthlyCount',
               label: '₽',
             }}
@@ -74,7 +77,6 @@ const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
             name='dailyCount'
             component={Input}
             props={{
-              type: 'number',
               id: 'dailyCount',
               label: '₽ в день',
             }}
@@ -85,13 +87,13 @@ const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
             name='hourlyCount'
             component={Input}
             props={{
-              type: 'number',
               id: 'hourlyCount',
               label: '₽ в час',
             }}
           />
         )}
       </div>
+      {salaryType === 'mounthly' && <SalaryInfo salary={mounthlyCount} withoutNDFL={withoutNDFL} />}
     </form>
   )
 }
@@ -105,5 +107,7 @@ const selector = formValueSelector('salary')
 export const SalaryForm = connect((state) => {
   return {
     salaryType: selector(state, 'salaryType'),
+    mounthlyCount: selector(state, 'mounthlyCount'),
+    withoutNDFL: selector(state, 'withoutNDFL'),
   }
 })(SalaryFormWithoutValues)
