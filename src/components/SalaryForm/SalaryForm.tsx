@@ -2,6 +2,7 @@ import React from 'react'
 import { Field, reduxForm, InjectedFormProps } from 'redux-form'
 import { Input } from '../Input'
 import { Tooltip } from '../Tooltip'
+
 import styles from './SalaryForm.module.scss'
 
 interface IProps {
@@ -12,12 +13,14 @@ const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
   return (
     <form onSubmit={handleSubmit}>
       <h3>Сумма</h3>
-      <Field
-        name='salary-type'
-        component={Input}
-        props={{ type: 'radio', name: 'salary-type', id: 'mounthly', value: 'mounthly', label: 'Оклад за месяц' }}
-      />
-      <div className='flex-row'>
+      <div className={styles.row}>
+        <Field
+          name='salary-type'
+          component={Input}
+          props={{ type: 'radio', name: 'salary-type', id: 'mounthly', value: 'mounthly', label: 'Оклад за месяц' }}
+        />
+      </div>
+      <div className={styles.row}>
         <Field
           name='salary-type'
           component={Input}
@@ -25,16 +28,20 @@ const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
         />
         <Tooltip text='МРОТ - минимальный размер оплаты труда. Разный для разных регионов.' />
       </div>
-      <Field
-        name='salary-type'
-        component={Input}
-        props={{ type: 'radio', name: 'salary-type', id: 'daily', value: 'daily', label: 'Оклад за день' }}
-      />
-      <Field
-        name='salary-type'
-        component={Input}
-        props={{ type: 'radio', name: 'salary-type', id: 'hourly', value: 'hourly', label: 'Оклад за час' }}
-      />
+      <div className={styles.row}>
+        <Field
+          name='salary-type'
+          component={Input}
+          props={{ type: 'radio', name: 'salary-type', id: 'daily', value: 'daily', label: 'Оклад за день' }}
+        />
+      </div>
+      <div className={styles.row}>
+        <Field
+          name='salary-type'
+          component={Input}
+          props={{ type: 'radio', name: 'salary-type', id: 'hourly', value: 'hourly', label: 'Оклад за час' }}
+        />
+      </div>
     </form>
   )
 }
