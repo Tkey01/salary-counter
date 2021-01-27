@@ -4,7 +4,11 @@
 }
 
 .input {
-  width: 300px;
+  max-width: 200px;
+  border-radius: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 30px;
   height: 30px;
   margin-right: 10px;
 }

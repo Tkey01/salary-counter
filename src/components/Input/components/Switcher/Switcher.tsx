@@ -10,9 +10,13 @@ interface Props {
 export const Switcher: React.FC<Props> = ({ input, meta, ...rest }) => {
   return (
     <div className={styles.container}>
-      <label className={styles.label}>{rest.label1}</label>
+      <label htmlFor={rest.id} className={styles.label}>
+        {rest.label1}
+      </label>
       <CustomInput type='switch' {...input} {...rest} />
-      <label className={styles.label}>{rest.label2}</label>
+      <label htmlFor={rest.id} className={styles.label}>
+        {rest.label2}
+      </label>
     </div>
   )
 }
