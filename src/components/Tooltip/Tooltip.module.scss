@@ -1,0 +1,10 @@
+.btn {
+  background: none;
+  border: none;
+  outline: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
