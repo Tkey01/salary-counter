@@ -7,17 +7,21 @@ import { Tooltip } from '../Tooltip'
 import styles from './SalaryForm.module.scss'
 import { SalaryInfo } from '../Input/components/SalaryInfo/SalaryInfo'
 
-interface IProps {
-  [s: string]: any
+interface IFormData {
+  salaryType: string
+  withoutNDFL: boolean
+  mounthlyCount: string
+  dailyCount: string
+  hourlyCount: string
 }
 
-const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
-  handleSubmit,
-  salaryType,
-  mounthlyCount,
-  withoutNDFL,
-  ...rest
-}) => {
+interface IProps {
+  [prop: string]: any
+}
+
+type AllProps = IProps & InjectedFormProps<IFormData, IProps>
+
+const SalaryFormComponent: React.FC<IProps> = ({ handleSubmit, salaryType, mounthlyCount, withoutNDFL }) => {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Сумма</h3>

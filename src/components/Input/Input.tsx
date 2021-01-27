@@ -1,15 +1,25 @@
 import React from 'react'
+import { WrappedFieldProps } from 'redux-form'
+
 import { Radio } from './components/Radio'
 import { Switcher } from './components/Switcher'
 import { Text } from './components/Text'
 
-interface Props {
-  [prop: string]: any
-}
+import { IRadioProps } from './components/Radio/Radio'
+import { ISwitcherProps } from './components/Switcher/Switcher'
+import { ITextProps } from './components/Text/Text'
 
-export const Input: React.FC<Props> = ({ type, ...props }) => {
+type RadioInput = { type: 'radio' } & IRadioProps
+type SwitcherInput = { type: 'switcher' } & ISwitcherProps
+type TextInput = { type: 'text' } & ITextProps
+
+type InputProps = RadioInput | SwitcherInput | TextInput
+
+type Props = WrappedFieldProps & InputProps
+
+export const Input: React.FC<Props> = (props) => {
   const renderInput = () => {
-    switch (type) {
+    switch (props.type) {
       case 'radio':
         return <Radio {...props} />
       case 'switcher':

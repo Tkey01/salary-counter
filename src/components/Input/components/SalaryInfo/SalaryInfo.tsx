@@ -2,12 +2,12 @@ import React from 'react'
 
 import styles from './SalaryInfo.module.scss'
 
-interface Props {
+interface IProps {
   withoutNDFL: boolean
   salary: string
 }
 
-export const SalaryInfo: React.FC<Props> = ({ withoutNDFL, salary }) => {
+export const SalaryInfo: React.FC<IProps> = ({ withoutNDFL, salary }) => {
   const transformSalaryValue = (value: string | undefined): number => (value === undefined ? 0 : +value)
   const salaryCount = transformSalaryValue(salary)
 

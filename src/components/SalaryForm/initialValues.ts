@@ -1,15 +1,15 @@
 export interface InitialValues {
   salaryType: 'mounthly',
   withoutNDFL: false,
-  mounthlyCount: number,
-  dailyCount: number,
-  hourlyCount: number,
+  mounthlyCount: string,
+  dailyCount: string,
+  hourlyCount: string,
 }
 
-export const initialValues = {
+export const initialValues: InitialValues = {
   salaryType: 'mounthly',
   withoutNDFL: false,
-  mounthlyCount: 0,
-  dailyCount: 0,
-  hourlyCount: 0,
+  mounthlyCount: '0',
+  dailyCount: '0',
+  hourlyCount: '0',
 }

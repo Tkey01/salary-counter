@@ -1,21 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { CustomInput } from 'reactstrap'
+import { WrappedFieldProps } from 'redux-form'
 
 import styles from './Switcher.module.scss'
 
-interface Props {
-  [prop: string]: any
+export interface ISwitcherProps {
+  id: string
+  label1: string
+  label2: string
 }
 
-export const Switcher: React.FC<Props> = ({ input, meta, ...rest }) => {
+type Props = WrappedFieldProps & ISwitcherProps
+
+export const Switcher: React.FC<Props> = ({ input, meta, label1, label2, id }) => {
   return (
     <div className={styles.container}>
-      <label htmlFor={rest.id} className={styles.label}>
-        {rest.label1}
+      <label htmlFor={id} className={styles.label}>
+        {label1}
       </label>
-      <CustomInput type='switch' {...input} {...rest} />
-      <label htmlFor={rest.id} className={styles.label}>
-        {rest.label2}
+      <CustomInput type='switch' id={id} {...input} />
+      <label htmlFor={id} className={styles.label}>
+        {label2}
       </label>
     </div>
   )

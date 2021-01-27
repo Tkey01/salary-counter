@@ -1,10 +1,15 @@
 import React from 'react'
-import { FormGroup, CustomInput, Label, Input } from 'reactstrap'
+import { CustomInput } from 'reactstrap'
+import { WrappedFieldProps } from 'redux-form'
 
-interface Props {
-  [prop: string]: any
+export interface IRadioProps {
+  id: string
+  value: string
+  label: string
 }
 
-export const Radio: React.FC<Props> = ({ input, meta, ...rest }) => {
-  return <CustomInput type='radio' checked={input.value === rest.value} {...input} {...rest} />
+type Props = WrappedFieldProps & IRadioProps
+
+export const Radio: React.FC<Props> = ({ input, meta, id, value, label }) => {
+  return <CustomInput type='radio' id={id} checked={input.value === value} label={label} {...input} value={value} />
 }
