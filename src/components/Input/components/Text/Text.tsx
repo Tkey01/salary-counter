@@ -7,10 +7,10 @@ interface Props {
   [prop: string]: any
 }
 
-export const Text: React.FC<Props> = ({ input, meta, ...rest }) => {
+export const Text: React.FC<Props> = ({ input, meta, type, ...rest }) => {
   return (
     <div className={styles.container}>
-      <Input type='number' {...input} {...rest} className={styles.input} />
+      <Input type={type} {...input} {...rest} className={styles.input} />
       <label htmlFor={rest.id}>{rest.label}</label>
     </div>
   )
