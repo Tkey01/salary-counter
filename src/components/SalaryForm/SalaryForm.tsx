@@ -53,6 +53,15 @@ const SalaryFormComponent: React.FC<InjectedFormProps<{}, IProps> & IProps> = ({
             label2: 'Без НДФЛ',
           }}
         />
+        <Field
+          name='mounthly-count'
+          component={Input}
+          props={{
+            type: 'text',
+            id: 'mounthly-count',
+            label: '₽',
+          }}
+        />
       </div>
     </form>
   )

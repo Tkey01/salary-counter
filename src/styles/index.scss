@@ -1,2 +1,6 @@
-@import "./theme";
-@import "~bootstrap/scss/bootstrap";
+@import './theme';
+@import '~bootstrap/scss/bootstrap';
+
+label {
+  margin: 0;
+}
