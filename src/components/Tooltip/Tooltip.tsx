@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { UncontrolledTooltip, Button } from 'reactstrap'
+import React, { useEffect, useState } from 'react'
+import { Tooltip as ReactstrapTooltip, Button } from 'reactstrap'
 
 import close from './images/close.svg'
 import info from './images/info.svg'
@@ -18,7 +18,11 @@ const TooltipContent: React.FC<any> = ({ scheduleUpdate, text }) => {
   return <>{text}</>
 }
 
-export const Tooltip: React.FC<any> = ({ text, isOpen, isAttached, toggleAttached, toggleOpen }) => {
+export const Tooltip: React.FC<any> = ({ text }) => {
+  const [isOpen, toggleOpen] = useState(false)
+
+  const toggle = () => toggleOpen((prev) => !prev)
+
   const onClickBtn = (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault()
   }
@@ -26,12 +30,18 @@ export const Tooltip: React.FC<any> = ({ text, isOpen, isAttached, toggleAttache
   return (
     <div>
       <button className={styles.btn} onClick={onClickBtn} id='ScheduleUpdateTooltip'>
-        <img src={isAttached ? close : info} alt='Узнать подробнее' />
+        <img src={isOpen ? close : info} alt='Узнать подробнее' />
       </button>
 
-      <UncontrolledTooltip placement='top' target='ScheduleUpdateTooltip' trigger='click'>
+      <ReactstrapTooltip
+        isOpen={isOpen}
+        toggle={toggle}
+        placement='bottom-start'
+        target='ScheduleUpdateTooltip'
+        trigger='click'
+      >
         {({ scheduleUpdate }) => <TooltipContent text={text} scheduleUpdate={scheduleUpdate} />}
-      </UncontrolledTooltip>
+      </ReactstrapTooltip>
     </div>
   )
 }
