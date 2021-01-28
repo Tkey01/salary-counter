@@ -55,6 +55,10 @@
   }
 }
 
+.tooltip.show {
+  opacity: 1;
+}
+
 .tooltip-inner {
   background-color: #5e6cab;
   text-align: left;
