@@ -1,5 +1,9 @@
 # Salary Counter
 
+## Demo
+
+- https://tkey01.github.io/salary-counter
+
 ## Installation
 
 - npm install
