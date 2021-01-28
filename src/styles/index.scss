@@ -1,7 +1,70 @@
 @import '~bootstrap/scss/bootstrap';
-@import './theme';
 @import './inputs';
 
-label {
-  margin: 0;
+.App {
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+  }
+
+  .custom-switch .custom-control-label::before {
+    width: 34px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: #e7e8e3;
+    border: none;
+  }
+
+  .custom-switch .custom-control-label::after {
+    width: 15px;
+    height: 16px;
+    left: -32px;
+    top: 6px;
+    background-color: #fff;
+  }
+
+  .custom-control-input:active ~ .custom-control-label::before {
+    background-color: #f0b67c;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #f39e49;
+  }
+
+  .custom-control-input[type='radio']:checked ~ .custom-control-label::before {
+    background-color: #fff;
+    border-color: #adb5bd;
+  }
+
+  .custom-control-input[type='radio']:checked ~ .custom-control-label::after {
+    background-image: none;
+    background-color: #363636;
+    border-radius: 50%;
+    border: none;
+    width: 10px;
+    height: 10px;
+    top: 7px;
+    left: -21px;
+  }
+
+  .custom-control-label {
+    font-weight: 600;
+  }
+}
+
+.tooltip-inner {
+  background-color: #5e6cab;
+  text-align: left;
+  padding: 20px 10px;
+  max-width: 250px;
+  font-weight: 600;
+  border-radius: 0;
+}
+
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-auto[x-placement^='bottom'] .arrow::before {
+  border-bottom-color: #5e6cab;
 }

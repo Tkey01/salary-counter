@@ -4,6 +4,21 @@
 }
 
 .label {
-  margin-right: 10px;
+  margin-top: 2px;
   user-select: none;
+  font-weight: bold;
+  font-size: 12px;
+  color: #b5b5b5;
+
+  &:first-child {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+  }
+}
+
+.active {
+  color: #3d3d3d;
 }

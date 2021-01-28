@@ -1,14 +1,24 @@
 .container {
   display: flex;
   align-items: center;
+  margin-top: 15px;
 }
 
 .input {
-  max-width: 200px;
+  max-width: 160px;
   border-radius: 20px;
   padding-top: 0;
   padding-bottom: 0;
   line-height: 30px;
   height: 30px;
   margin-right: 10px;
+  font-weight: bold;
+
+  &:focus {
+    border-color: #ced4da;
+  }
+}
+
+.label {
+  font-weight: bold;
 }

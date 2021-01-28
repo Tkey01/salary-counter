@@ -15,7 +15,9 @@ export const Text: React.FC<Props> = ({ input, meta, id, label }) => {
   return (
     <div className={styles.container}>
       <Input type='number' {...input} className={styles.input} />
-      <label htmlFor={id}>{label}</label>
+      <label className={styles.label} htmlFor={id}>
+        {label}
+      </label>
     </div>
   )
 }

@@ -24,35 +24,37 @@ type AllProps = IProps & InjectedFormProps<IFormData, IProps>
 const SalaryFormComponent: React.FC<IProps> = ({ handleSubmit, salaryType, mounthlyCount, withoutNDFL }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <h3>Сумма</h3>
-      <div className={styles.row}>
-        <Field
-          name='salaryType'
-          component={Input}
-          props={{ type: 'radio', id: 'mounthly', value: 'mounthly', label: 'Оклад за месяц' }}
-        />
-      </div>
-      <div className={styles.row}>
-        <Field
-          name='salaryType'
-          component={Input}
-          props={{ type: 'radio', id: 'mrot', value: 'mrot', label: 'МРОТ' }}
-        />
-        <Tooltip text='МРОТ - минимальный размер оплаты труда. Разный для разных регионов.' />
-      </div>
-      <div className={styles.row}>
-        <Field
-          name='salaryType'
-          component={Input}
-          props={{ type: 'radio', id: 'daily', value: 'daily', label: 'Оклад за день' }}
-        />
-      </div>
-      <div className={styles.row}>
-        <Field
-          name='salaryType'
-          component={Input}
-          props={{ type: 'radio', id: 'hourly', value: 'hourly', label: 'Оклад за час' }}
-        />
+      <h3 className={styles.header}>Сумма</h3>
+      <div className={styles.salaryTypeContainer}>
+        <div className={styles.row}>
+          <Field
+            name='salaryType'
+            component={Input}
+            props={{ type: 'radio', id: 'mounthly', value: 'mounthly', label: 'Оклад за месяц' }}
+          />
+        </div>
+        <div className={styles.row}>
+          <Field
+            name='salaryType'
+            component={Input}
+            props={{ type: 'radio', id: 'mrot', value: 'mrot', label: 'МРОТ' }}
+          />
+          <Tooltip text='МРОТ - минимальный размер оплаты труда. Разный для разных регионов.' />
+        </div>
+        <div className={styles.row}>
+          <Field
+            name='salaryType'
+            component={Input}
+            props={{ type: 'radio', id: 'daily', value: 'daily', label: 'Оклад за день' }}
+          />
+        </div>
+        <div className={styles.row}>
+          <Field
+            name='salaryType'
+            component={Input}
+            props={{ type: 'radio', id: 'hourly', value: 'hourly', label: 'Оклад за час' }}
+          />
+        </div>
       </div>
       <div className={styles.inputContainer}>
         <Field
