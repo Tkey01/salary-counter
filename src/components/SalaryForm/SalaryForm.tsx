@@ -7,21 +7,15 @@ import { Tooltip } from '../Tooltip'
 import styles from './SalaryForm.module.scss'
 import { SalaryInfo } from '../SalaryInfo'
 
-interface IFormData {
+interface StateProps {
   salaryType: string
   withoutNDFL: boolean
   mounthlyCount: string
-  dailyCount: string
-  hourlyCount: string
 }
 
-interface IProps {
-  [prop: string]: any
-}
+type AllProps = StateProps & InjectedFormProps<{}, StateProps>
 
-type AllProps = IProps & InjectedFormProps<IFormData, IProps>
-
-const SalaryFormComponent: React.FC<IProps> = ({ handleSubmit, salaryType, mounthlyCount, withoutNDFL }) => {
+const SalaryFormComponent: React.FC<AllProps> = ({ handleSubmit, salaryType, mounthlyCount, withoutNDFL }) => {
   return (
     <form onSubmit={handleSubmit}>
       <h3 className={styles.header}>Сумма</h3>
@@ -104,16 +98,16 @@ const SalaryFormComponent: React.FC<IProps> = ({ handleSubmit, salaryType, mount
   )
 }
 
-const SalaryFormWithoutValues = reduxForm({
-  form: 'salary',
-})(SalaryFormComponent)
-
 const selector = formValueSelector('salary')
 
-export const SalaryForm = connect((state) => {
-  return {
-    salaryType: selector(state, 'salaryType'),
-    mounthlyCount: selector(state, 'mounthlyCount'),
-    withoutNDFL: selector(state, 'withoutNDFL'),
-  }
-})(SalaryFormWithoutValues)
+const mapDispatch = (state: any): StateProps => ({
+  salaryType: selector(state, 'salaryType'),
+  mounthlyCount: selector(state, 'mounthlyCount'),
+  withoutNDFL: selector(state, 'withoutNDFL'),
+})
+
+export const SalaryForm = connect(mapDispatch)(
+  reduxForm<{}, StateProps>({
+    form: 'salary',
+  })(SalaryFormComponent),
+)
