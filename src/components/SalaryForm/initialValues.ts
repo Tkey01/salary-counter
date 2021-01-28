@@ -1,6 +1,6 @@
 export interface InitialValues {
-  salaryType: 'mounthly',
-  withoutNDFL: false,
+  salaryType: string,
+  withoutNDFL: boolean,
   mounthlyCount: string,
   dailyCount: string,
   hourlyCount: string,

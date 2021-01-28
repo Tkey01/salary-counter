@@ -17,10 +17,10 @@ interface ITooltip {
 
 const TooltipContent: React.FC<ITooltipContent> = ({ scheduleUpdate, text }) => {
   useEffect(() => {
-    // const intervalId = setInterval(() => {
-    //   scheduleUpdate()
-    // }, 2000)
-    // return () => clearInterval(intervalId)
+    const intervalId = setInterval(() => {
+      scheduleUpdate()
+    }, 2000)
+    return () => clearInterval(intervalId)
   })
 
   return <>{text}</>
