@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/salary-counter/precache-manifest.a68c937bb3347a01d4da1cbbb645f934.js"
+  "/salary-counter/precache-manifest.4e534972f5dac5d21a35b8fc270de902.js"
 );
 
 self.addEventListener('message', (event) => {
