@@ -5,7 +5,7 @@ import { Input } from '../Input'
 import { Tooltip } from '../Tooltip'
 
 import styles from './SalaryForm.module.scss'
-import { SalaryInfo } from '../Input/components/SalaryInfo/SalaryInfo'
+import { SalaryInfo } from '../SalaryInfo'
 
 interface IFormData {
   salaryType: string
