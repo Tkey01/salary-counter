@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/salary-counter/static/css/main.1ea706f6.chunk.css",
-    "main.js": "/salary-counter/static/js/main.da0fb1ee.chunk.js",
-    "main.js.map": "/salary-counter/static/js/main.da0fb1ee.chunk.js.map",
+    "main.css": "/salary-counter/static/css/main.a403ef55.chunk.css",
+    "main.js": "/salary-counter/static/js/main.a7cb6b22.chunk.js",
+    "main.js.map": "/salary-counter/static/js/main.a7cb6b22.chunk.js.map",
     "runtime-main.js": "/salary-counter/static/js/runtime-main.769b8bff.js",
     "runtime-main.js.map": "/salary-counter/static/js/runtime-main.769b8bff.js.map",
     "static/js/2.9322c693.chunk.js": "/salary-counter/static/js/2.9322c693.chunk.js",
     "static/js/2.9322c693.chunk.js.map": "/salary-counter/static/js/2.9322c693.chunk.js.map",
     "index.html": "/salary-counter/index.html",
-    "precache-manifest.4e534972f5dac5d21a35b8fc270de902.js": "/salary-counter/precache-manifest.4e534972f5dac5d21a35b8fc270de902.js",
+    "precache-manifest.426a8c92a4d477a7016f834f88735020.js": "/salary-counter/precache-manifest.426a8c92a4d477a7016f834f88735020.js",
     "service-worker.js": "/salary-counter/service-worker.js",
-    "static/css/main.1ea706f6.chunk.css.map": "/salary-counter/static/css/main.1ea706f6.chunk.css.map",
+    "static/css/main.a403ef55.chunk.css.map": "/salary-counter/static/css/main.a403ef55.chunk.css.map",
     "static/js/2.9322c693.chunk.js.LICENSE.txt": "/salary-counter/static/js/2.9322c693.chunk.js.LICENSE.txt",
     "static/media/close.svg": "/salary-counter/static/media/close.c8e88071.svg",
     "static/media/info.svg": "/salary-counter/static/media/info.fb39fb75.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.769b8bff.js",
     "static/js/2.9322c693.chunk.js",
-    "static/css/main.1ea706f6.chunk.css",
-    "static/js/main.da0fb1ee.chunk.js"
+    "static/css/main.a403ef55.chunk.css",
+    "static/js/main.a7cb6b22.chunk.js"
   ]
 }
